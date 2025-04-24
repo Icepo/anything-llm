@@ -1,8 +1,8 @@
-name: anythingllm
+# name: anythingllm
 
 networks:
-  anything-llm:
-    driver: bridge
+  ooto-rag-network:
+    external: true
 
 services:
   anything-llm:
@@ -26,6 +26,6 @@ services:
     env_file:
       - .env
     networks:
-      - anything-llm
+      - ooto-rag-network
     extra_hosts:
       - "host.docker.internal:host-gateway"

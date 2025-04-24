@@ -10,3 +10,7 @@ aws_cf_deploy_anything_llm.json
 yarn.lock
 *.bak
 .idea
+
+# big dependence chrome uv
+chrome-linux
+uv-x86_64-unknown-linux-gnu

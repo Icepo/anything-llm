@@ -69,7 +69,10 @@ class OllamaEmbedder {
     let data = [];
     let error = null;
 
+    let cnt = 0
     for (const chunk of textChunks) {
+      cnt++;
+      this.log(`Embedding chunk: ` + cnt + `of ${textChunks.length}`);
       try {
         const res = await this.client.embeddings({
           model: this.model,
@@ -91,6 +94,8 @@ class OllamaEmbedder {
         error = err.message;
         data = [];
         break;
+      } finally {
+        this.log(`Finished embedding chunk: ` + cnt + `of ${textChunks.length}`);
       }
     }
 
